@@ -5,14 +5,15 @@ import { addDoc } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { setPersistence, browserLocalPersistence } from "firebase/auth"; // Add this import
 import { toast } from "react-toastify";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCAIG49zjpdEqTD-seMtsnejxPaezL9OFI",
-  authDomain: "netflix-clone-fbcff.firebaseapp.com",
-  projectId: "netflix-clone-fbcff",
-  storageBucket: "netflix-clone-fbcff.appspot.com",
-  messagingSenderId: "1084678815786",
-  appId: "1:1084678815786:web:970ade0e72bddfc6448353"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
@@ -49,7 +50,8 @@ const login = async(email , password)=>{
         await setPersistence(auth, browserLocalPersistence); // This ensures the session is stored
         const res = await signInWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        console.log("User logged in successfully:", user);
+        // console.log("User logged in successfully:", user);
+        console.log("User logged in successfully:");
 
     }
     catch(error){

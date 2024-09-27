@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Home from './Pages/Home/Home';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Login from './Pages/Login/Login';
 import Player from './Pages/Player/Player';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -8,6 +8,8 @@ import { auth } from './firebase';
 import ProtectedRoute from './ProtectedRoute';
 
 const App = () => {
+
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
 
@@ -19,6 +21,8 @@ const App = () => {
       } else {
         console.log('User is not authenticated');
         setUser(null);
+        navigate('/login');
+
       }
       setIsAuthChecked(true);
     });

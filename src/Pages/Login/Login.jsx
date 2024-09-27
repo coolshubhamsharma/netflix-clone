@@ -3,9 +3,13 @@ import logo from '../../assets/logo.png'
 import './Login.css'
 import { login , signup } from '../../firebase'
 import netflix_spinner from '../../assets/netflix_spinner.gif'
+import { useNavigate } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../../firebase'
 
 const Login = () => {
 
+  const navigate = useNavigate();
   const [signState , setSignState] = useState("Sign In");
   const[name , setName] = useState("");
   const [email , setEmail] = useState("");
@@ -17,6 +21,11 @@ const Login = () => {
     setLoading(true);
     if(signState === "Sign In"){
       await login(email , password); 
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          console.log('User is authenticated');
+          navigate('/');
+        }})
     }else{
       await signup(name , email , password);
     }
