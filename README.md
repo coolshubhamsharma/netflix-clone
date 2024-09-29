@@ -51,7 +51,7 @@ Unlike other platforms, Netflix-Clone emphasizes simplicity in user experience w
 -Multi-language subtitles and closed captions
 
 ## Installation
-- git clone https://github.com/yourusername/netflix-clone.git
+- git clone https://github.com/coolshubhamsharma/netflix-clone.git
 - cd netflix-clone
 
 ## Install Dependencies
