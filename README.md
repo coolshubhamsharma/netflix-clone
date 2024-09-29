@@ -72,10 +72,4 @@ Unlike other platforms, Netflix-Clone emphasizes simplicity in user experience w
 
 - npm run build
 
-## Running unit tests
 
-- npm test
-
-## Running end-to-end tests
-
-- npm run 2e2
