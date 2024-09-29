@@ -18,15 +18,21 @@ The Netflix-Clone application was developed to replicate and understand the fund
 ## Features
 General Features:
 -User Authentication via firebase
--Video 
+
+-Video
+
 -Video Playback
+
 -Responsive design
+
 
 <img src="./public/file.png">
 
 #### Services 
 -Video Recommendations
+
 -Real-time streaming
+
 -Subscription-based notifications for new videos
 
 
